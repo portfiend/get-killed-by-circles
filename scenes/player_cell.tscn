@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://n870tot27k74"]
+[gd_scene load_steps=8 format=3 uid="uid://n870tot27k74"]
 
+[ext_resource type="Shader" uid="uid://8noh30mqtiqt" path="res://shaders/glow.gdshader" id="1_hgwy8"]
 [ext_resource type="Script" uid="uid://dbfo1oa1h8a7l" path="res://scripts/Cell/PlayerCell.cs" id="1_jxts3"]
 [ext_resource type="Texture2D" uid="uid://kho3ca0e4nud" path="res://sprites/circle.png" id="2_e8qg2"]
 [ext_resource type="Script" uid="uid://n8i6wviwg277" path="res://scripts/Colors/RandomColor.cs" id="3_hgwy8"]
 [ext_resource type="Script" uid="uid://c2u3ujij6508n" path="res://scripts/Inputs/PlayerInputHandler.cs" id="4_e8qg2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogwej"]
+resource_local_to_scene = true
+shader = ExtResource("1_hgwy8")
+shader_parameter/outline_size = 5.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 2.0
 
 [node name="Player" type="Area2D" node_paths=PackedStringArray("Input")]
+material = SubResource("ShaderMaterial_ogwej")
 collision_layer = 9
 script = ExtResource("1_jxts3")
 ScaleDivisor = 100.0
