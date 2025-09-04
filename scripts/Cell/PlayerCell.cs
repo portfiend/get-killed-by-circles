@@ -6,7 +6,7 @@ namespace Game.Cell;
 public sealed partial class PlayerCell : Cell
 {
 	[Export] public float BASE_SIZE = 50.0f;
-	[Export] private float GROWTH_DIVISOR = 8.0f;
+	[Export] private float GROWTH_DIVISOR = 6.0f;
 	private Vector2 _screenSize;
 	
 	[Signal]
