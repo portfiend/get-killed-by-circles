@@ -1,17 +1,26 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 namespace Game.Cell;
 
 public sealed partial class EnemyCell : Cell
 {
-	[Export] private float MAX_SIZE = 2000.0f;
+	private List<Vector2> _sizeRanges = new()
+	{
+		new(10.0f, 50.0f),
+		new(50.0f, 200.0f),
+		new(200.0f, 700.0f),
+		new(700.0f, 2500.0f),
+	};
 
-	private static Random rng = new();
+	private static RandomNumberGenerator rng = new();
 
 	public override void _Ready()
 	{
-		Size = (float) rng.NextDouble() * MAX_SIZE;
+		var sizeRange = _sizeRanges[rng.RandiRange(0, _sizeRanges.Count - 1)];
+		Size = rng.RandfRange(sizeRange.X, sizeRange.Y);
+
 		base._Ready();
 	}
 }

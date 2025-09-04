@@ -6,7 +6,7 @@ namespace Game.Cell;
 public abstract partial class Cell : Area2D
 {
 	[Export] public float Size = 0;
-	[Export] public float ScaleDivisor = 100.0f;
+	[Export] public float ScaleDivisor = 50.0f;
 	[Export] public InputHandler Input;
 	[Export] public float BaseVelocity = 2.0f;
 	[Export] public float VelocityMultiplier = 1.0f;

@@ -5,20 +5,22 @@ namespace Game.Cell;
 
 public sealed partial class PlayerCell : Cell
 {
+	[Export] private float BASE_SIZE = 50.0f;
+	[Export] private float GROWTH_DIVISOR = 10.0f;
 	private Vector2 _screenSize;
 
 	public override void _Ready()
 	{
 		_screenSize = GetViewportRect().Size;
-		Size = 10.0f;
+		Size = BASE_SIZE;
 		
-		BodyEntered += OnBodyEntered;
+		AreaEntered += OnAreaEntered;
 		base._Ready();
 	}
 
-	private void OnBodyEntered(Node2D body)
+	private void OnAreaEntered(Area2D area)
 	{
-		if (body is not EnemyCell otherCell)
+		if (area is not EnemyCell otherCell)
 			return;
 
 		AttemptEat(otherCell);
@@ -47,7 +49,7 @@ public sealed partial class PlayerCell : Cell
 	{
 		otherCell.QueueFree();
 
-		Size += otherCell.Size;
+		Size += otherCell.Size / GROWTH_DIVISOR;
 		UpdateScale();
 	}
 }

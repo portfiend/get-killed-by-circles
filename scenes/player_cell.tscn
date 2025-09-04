@@ -6,20 +6,21 @@
 [ext_resource type="Script" uid="uid://c2u3ujij6508n" path="res://scripts/Inputs/PlayerInputHandler.cs" id="4_e8qg2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
-radius = 5.0
+radius = 2.0
 
 [node name="Player" type="Area2D" node_paths=PackedStringArray("Input")]
+collision_layer = 9
 script = ExtResource("1_jxts3")
 Input = NodePath("InputHandler")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_g2els")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 2
-scale = Vector2(0.0777378, 0.0777378)
+scale = Vector2(0.030909, 0.030909)
 texture = ExtResource("2_e8qg2")
 script = ExtResource("3_hgwy8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
 
 [node name="InputHandler" type="Node" parent="."]
 script = ExtResource("4_e8qg2")
