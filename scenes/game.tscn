@@ -13,6 +13,18 @@ Hud = NodePath("GameObjects/GameHud")
 GameOverHud = NodePath("GameOverHud")
 GameObjects = NodePath("GameObjects")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 640.0
+offset_bottom = 480.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.24302, 0.1334, 0.29, 1)
+
 [node name="GameOverHud" parent="." instance=ExtResource("2_iywne")]
 visible = false
 
