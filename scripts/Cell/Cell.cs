@@ -15,7 +15,6 @@ public abstract partial class Cell : Area2D
 	public override void _Ready()
 	{
 		base._Ready();
-
 		UpdateScale();
 	}
 

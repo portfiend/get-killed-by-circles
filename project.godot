@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tiny-1"
-run/main_scene="uid://byyynonxlxepd"
+run/main_scene="uid://dmkr1byms6b6t"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
