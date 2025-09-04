@@ -14,6 +14,7 @@ public partial class Game : Node2D
 
 	private float PlayerScore => Player.Size - Player.BASE_SIZE;
 	private float WIN_THRESHOLD = 3000.0f;
+	private bool _gameOver = false;
 
 	public override void _Ready()
 	{
@@ -27,9 +28,16 @@ public partial class Game : Node2D
 
 	private void OnPlayerDied()
 	{
-		var finalScore = PlayerScore;
 		GameObjects.QueueFree();
-
 		GameOverHud.GameOver(PlayerScore, PlayerScore > WIN_THRESHOLD);
+		_gameOver = true;
+	}
+
+	public override void _Process(double delta)
+	{
+		base._Process(delta);
+
+		if (Input.IsActionPressed("ui_accept") && _gameOver)
+			GetTree().ReloadCurrentScene();
 	}
 }

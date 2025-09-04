@@ -7,6 +7,7 @@ public partial class GameOverHud : CanvasLayer
 {
 	[Export] public Label GameOverLabel;
 	[Export] public Label FinalScoreLabel;
+	[Export] public Button RestartButton;
 
 	public void GameOver(float score, bool wonGame = false)
 	{
