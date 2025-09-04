@@ -1,3 +1,4 @@
+using System;
 using Game.Inputs;
 using Godot;
 
@@ -36,5 +37,13 @@ public abstract partial class Cell : Area2D
 	{
 		var newSize = Size / ScaleDivisor;
 		Scale = Vector2.One + new Vector2(newSize, newSize);
+		UpdateVelocity();
+	}
+
+	protected virtual void UpdateVelocity()
+	{
+		float baseSize = 50.0f;
+		float ratio = 10.0f;
+		VelocityMultiplier = MathF.Log(Size / baseSize, ratio) + 1.0f;
 	}
 }

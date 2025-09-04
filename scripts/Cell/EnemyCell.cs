@@ -45,5 +45,11 @@ public sealed partial class EnemyCell : Cell
 			GD.Print($"Deleting enemy at {Position}");
 			QueueFree();
 		}
+	}
+
+	protected override void UpdateVelocity()
+	{
+		base.UpdateVelocity();
+		VelocityMultiplier *= rng.RandfRange(0.5f, 1.1f);
     }
 }
