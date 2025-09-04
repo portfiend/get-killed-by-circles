@@ -42,8 +42,9 @@ public abstract partial class Cell : Area2D
 
 	protected virtual void UpdateVelocity()
 	{
-		float baseSize = 50.0f;
-		float ratio = 10.0f;
-		VelocityMultiplier = MathF.Log(Size / baseSize, ratio) + 1.0f;
+		var minSize = 50f;
+		var maxSize = 3000f;
+
+		VelocityMultiplier = 1.0f + (MathF.Sqrt(Size) - MathF.Sqrt(minSize)) / (MathF.Sqrt(maxSize) - MathF.Sqrt(minSize));
 	}
 }

@@ -8,7 +8,7 @@ namespace Game.Spawner;
 
 public partial class EnemySpawner : Node2D
 {
-	[Export] public int SpawnerCount = 8;
+	[Export] public int SpawnerCount = 10;
 	[Export] public double MinSpawnCooldown = 1.0f;
 	[Export] public double MaxSpawnCooldown = 10.0f;
 	[Export] public Node2D _game;

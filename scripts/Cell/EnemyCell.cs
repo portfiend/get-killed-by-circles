@@ -11,8 +11,9 @@ public sealed partial class EnemyCell : Cell
 	{
 		new(10.0f, 50.0f),
 		new(50.0f, 200.0f),
-		new(200.0f, 700.0f),
-		new(700.0f, 2500.0f),
+		new(200.0f, 500.0f),
+		new(500.0f, 1000.0f),
+		new(1000.0f, 2500.0f),
 	};
 
 	private static RandomNumberGenerator rng = new();
@@ -50,6 +51,6 @@ public sealed partial class EnemyCell : Cell
 	protected override void UpdateVelocity()
 	{
 		base.UpdateVelocity();
-		VelocityMultiplier *= rng.RandfRange(0.5f, 1.1f);
+		VelocityMultiplier *= rng.RandfRange(0.75f, 1.1f);
     }
 }
