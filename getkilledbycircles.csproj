@@ -2,6 +2,6 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
-    <RootNamespace>tiny1</RootNamespace>
+    <RootNamespace>Game</RootNamespace>
   </PropertyGroup>
 </Project>

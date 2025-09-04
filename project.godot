@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="tiny-1"
+config/name="get killed by circles"
 run/main_scene="uid://dmkr1byms6b6t"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -23,7 +23,7 @@ window/size/resizable=false
 
 [dotnet]
 
-project/assembly_name="tiny-1"
+project/assembly_name="getkilledbycircles"
 
 [input]
 

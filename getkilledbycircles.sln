@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tiny-1", "tiny-1.csproj", "{E328BEDA-BD65-41FD-AFB6-559444D8412D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "getkilledbycircles", "getkilledbycircles.csproj", "{E328BEDA-BD65-41FD-AFB6-559444D8412D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
