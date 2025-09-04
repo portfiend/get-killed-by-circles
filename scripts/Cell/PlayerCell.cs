@@ -12,7 +12,16 @@ public sealed partial class PlayerCell : Cell
 		_screenSize = GetViewportRect().Size;
 		Size = 10.0f;
 		
+		BodyEntered += OnBodyEntered;
 		base._Ready();
+	}
+
+	private void OnBodyEntered(Node2D body)
+	{
+		if (body is not EnemyCell otherCell)
+			return;
+
+		AttemptEat(otherCell);
 	}
 
 	protected override void HandleMovement(double delta)
@@ -21,16 +30,23 @@ public sealed partial class PlayerCell : Cell
 		Position = Position.Clamp(Vector2.Zero, _screenSize);
 	}
 
-	protected override void AttemptEat(Cell otherCell)
+	private void AttemptEat(EnemyCell otherCell)
 	{
-		base.AttemptEat(otherCell);
-
+		if (Size < otherCell.Size)
+			Die();
 		if (Size > otherCell.Size)
 			Eat(otherCell);
 	}
 
-	private void Eat(Cell otherCell)
+	private void Die()
 	{
+		QueueFree();
+	}
+
+	private void Eat(EnemyCell otherCell)
+	{
+		otherCell.QueueFree();
+
 		Size += otherCell.Size;
 		UpdateScale();
 	}
