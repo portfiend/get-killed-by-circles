@@ -5,11 +5,11 @@ namespace Game.Cell;
 
 public sealed partial class PlayerCell : Cell
 {
-    private Vector2 _screenSize;
+	private Vector2 _screenSize;
 
 	public override void _Ready()
 	{
-        _screenSize = GetViewportRect().Size;
+		_screenSize = GetViewportRect().Size;
 		Size = 10.0f;
 		
 		base._Ready();
@@ -19,7 +19,7 @@ public sealed partial class PlayerCell : Cell
 	{
 		base.HandleMovement(delta);
 		Position = Position.Clamp(Vector2.Zero, _screenSize);
-    }
+	}
 
 	protected override void AttemptEat(Cell otherCell)
 	{

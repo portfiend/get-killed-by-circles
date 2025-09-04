@@ -11,7 +11,7 @@ public partial class EnemySpawner : Node2D
 	[Export] public int SpawnerCount = 3;
 	[Export] public double MinSpawnCooldown = 1.0f;
 	[Export] public double MaxSpawnCooldown = 10.0f;
-	[Export] public Node2D Game;
+	[Export] public Node2D _game;
 	[Export] private PackedScene _enemyScene;
 
 	private static Random rng = new();
@@ -38,7 +38,7 @@ public partial class EnemySpawner : Node2D
 	private void SpawnEnemy()
 	{
 		var enemy = (EnemyCell)_enemyScene.Instantiate();
-		Game.AddChild(enemy);
+		_game.AddChild(enemy);
 
 		var handler = (EnemyInputHandler)enemy.Input;
 
@@ -57,6 +57,7 @@ public partial class EnemySpawner : Node2D
 		};
 
 		enemy.Position = pos;
+		GD.Print($"Spawned a new enemy at {enemy.Position}");
 	}
 
 	private MoveDirection GetRandomDirection()
