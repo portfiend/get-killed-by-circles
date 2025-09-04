@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Godot Run",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "/media/piggybank/TORSO/Godot/Engine/4.4.1-mono/Godot_v4.4.1-stable_mono_linux.x86_64",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false,
+            "args": [
+                "--path",
+                "${workspaceRoot}"
+            ]
+        }
+    ]
+}

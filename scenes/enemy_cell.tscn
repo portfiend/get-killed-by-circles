@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgcylyj083n8w"]
+
+[ext_resource type="Script" uid="uid://c4vljrvts33ct" path="res://scripts/Cell/EnemyCell.cs" id="1_nm02e"]
+[ext_resource type="Texture2D" uid="uid://kho3ca0e4nud" path="res://sprites/circle.png" id="1_upbjj"]
+[ext_resource type="Script" uid="uid://n8i6wviwg277" path="res://scripts/Colors/RandomColor.cs" id="2_0s7o3"]
+[ext_resource type="Script" uid="uid://emo44a8bcndx" path="res://scripts/Inputs/EnemyInputHandler.cs" id="4_yhxdi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 5.0
+
+[node name="Enemy" type="Area2D" node_paths=PackedStringArray("Input")]
+script = ExtResource("1_nm02e")
+Input = NodePath("InputHandler")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 2
+scale = Vector2(0.0777378, 0.0777378)
+texture = ExtResource("1_upbjj")
+script = ExtResource("2_0s7o3")
+
+[node name="InputHandler" type="Node" parent="."]
+script = ExtResource("4_yhxdi")
