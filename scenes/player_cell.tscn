@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://n870tot27k74"]
+[gd_scene load_steps=5 format=3 uid="uid://n870tot27k74"]
 
 [ext_resource type="Script" uid="uid://dbfo1oa1h8a7l" path="res://scripts/Cell/PlayerCell.cs" id="1_jxts3"]
 [ext_resource type="Texture2D" uid="uid://kho3ca0e4nud" path="res://sprites/circle.png" id="2_e8qg2"]
-[ext_resource type="Script" uid="uid://n8i6wviwg277" path="res://scripts/Colors/RandomColor.cs" id="3_hgwy8"]
 [ext_resource type="Script" uid="uid://c2u3ujij6508n" path="res://scripts/Inputs/PlayerInputHandler.cs" id="4_e8qg2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
@@ -18,8 +17,6 @@ Input = NodePath("InputHandler")
 texture_filter = 2
 scale = Vector2(0.030909, 0.030909)
 texture = ExtResource("2_e8qg2")
-script = ExtResource("3_hgwy8")
-_saturated = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g2els")

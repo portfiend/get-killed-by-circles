@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1cpgeenu00n4"]
+
+[ext_resource type="Script" uid="uid://et1hs5rjw2xv" path="res://scripts/Interface/GameOverHud.cs" id="1_cr8m1"]
+
+[node name="GameOverHud" type="CanvasLayer" node_paths=PackedStringArray("GameOverLabel", "FinalScoreLabel")]
+script = ExtResource("1_cr8m1")
+GameOverLabel = NodePath("GameOverLabel")
+FinalScoreLabel = NodePath("FinalScoreLabel")
+
+[node name="GameOverLabel" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -89.0
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartLabel" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 41.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Press Space or Enter to restart"
+horizontal_alignment = 1
+
+[node name="FinalScoreLabel" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 24
+text = "Final Score: 9999"
+horizontal_alignment = 1

@@ -12,6 +12,9 @@ public sealed partial class PlayerCell : Cell
 	[Signal]
 	public delegate void ScoreUpdatedEventHandler(float score);
 
+	[Signal]
+	public delegate void DiedEventHandler();
+
 	public override void _Ready()
 	{
 		_screenSize = GetViewportRect().Size;
@@ -51,7 +54,7 @@ public sealed partial class PlayerCell : Cell
 
 	private void Die()
 	{
-		QueueFree();
+		EmitSignal(SignalName.Died);
 	}
 
 	private void Eat(EnemyCell otherCell)
