@@ -51,6 +51,6 @@ public sealed partial class EnemyCell : Cell
 	protected override void UpdateVelocity()
 	{
 		base.UpdateVelocity();
-		VelocityMultiplier *= rng.RandfRange(0.75f, 1.1f);
+		VelocityMultiplier *= rng.RandfRange(0.5f, 1.5f);
 	}
 }
