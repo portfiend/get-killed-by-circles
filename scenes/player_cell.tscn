@@ -11,6 +11,7 @@ radius = 2.0
 [node name="Player" type="Area2D" node_paths=PackedStringArray("Input")]
 collision_layer = 9
 script = ExtResource("1_jxts3")
+ScaleDivisor = 100.0
 Input = NodePath("InputHandler")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

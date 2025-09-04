@@ -52,5 +52,5 @@ public sealed partial class EnemyCell : Cell
 	{
 		base.UpdateVelocity();
 		VelocityMultiplier *= rng.RandfRange(0.75f, 1.1f);
-    }
+	}
 }

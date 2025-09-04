@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctcpdn5qrwid4"]
+
+[ext_resource type="Script" uid="uid://k5q80l3ay17y" path="res://scripts/Interface/GameHud.cs" id="1_jna2d"]
+
+[node name="GameHud" type="CanvasLayer" node_paths=PackedStringArray("ScoreLabel")]
+script = ExtResource("1_jna2d")
+ScoreLabel = NodePath("ScoreLabel")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 31.0
+theme_override_font_sizes/font_size = 24
+text = "9999"

@@ -33,7 +33,7 @@ public abstract partial class Cell : Area2D
 		Position += velocity;
 	}
 
-	protected void UpdateScale()
+	protected virtual void UpdateScale()
 	{
 		var newSize = Size / ScaleDivisor;
 		Scale = Vector2.One + new Vector2(newSize, newSize);

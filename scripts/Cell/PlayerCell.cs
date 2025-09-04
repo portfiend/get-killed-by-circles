@@ -5,15 +5,18 @@ namespace Game.Cell;
 
 public sealed partial class PlayerCell : Cell
 {
-	[Export] private float BASE_SIZE = 50.0f;
+	[Export] public float BASE_SIZE = 50.0f;
 	[Export] private float GROWTH_DIVISOR = 10.0f;
 	private Vector2 _screenSize;
+	
+	[Signal]
+	public delegate void ScoreUpdatedEventHandler(float score);
 
 	public override void _Ready()
 	{
 		_screenSize = GetViewportRect().Size;
 		Size = BASE_SIZE;
-		
+
 		AreaEntered += OnAreaEntered;
 		base._Ready();
 	}
@@ -30,6 +33,12 @@ public sealed partial class PlayerCell : Cell
 	{
 		base.HandleMovement(delta);
 		Position = Position.Clamp(Vector2.Zero, _screenSize);
+	}
+
+	protected override void UpdateScale()
+	{
+		base.UpdateScale();
+		EmitSignal(SignalName.ScoreUpdated, Size - BASE_SIZE);
 	}
 
 	private void AttemptEat(EnemyCell otherCell)
