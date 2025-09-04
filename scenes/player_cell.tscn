@@ -19,6 +19,7 @@ texture_filter = 2
 scale = Vector2(0.030909, 0.030909)
 texture = ExtResource("2_e8qg2")
 script = ExtResource("3_hgwy8")
+_saturated = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_g2els")

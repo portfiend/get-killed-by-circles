@@ -21,6 +21,8 @@ public sealed partial class RandomColor : Sprite2D
 		Color.FromHtml("#f44995"),
 	};
 
+	[Export] private bool _saturated = false;
+
 	private static Random rng = new();
 
 	public override void _Ready()
@@ -28,6 +30,9 @@ public sealed partial class RandomColor : Sprite2D
 		base._Ready();
 
 		var color = POSSIBLE_COLORS[rng.Next(POSSIBLE_COLORS.Count)];
+		if (_saturated)
+			color = color with { S = color.S * 1.5f };
+
 		Modulate = color;
 	}
 }
