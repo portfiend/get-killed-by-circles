@@ -16,6 +16,7 @@ public partial class EnemySpawner : Node2D
 
 	private static Random rng = new();
 	private Vector2 _screenSize;
+	private const float SCREEN_OFFSET = 240.0f;
 
 	public override void _Ready()
 	{
@@ -49,10 +50,10 @@ public partial class EnemySpawner : Node2D
 		var screenHeight = _screenSize.Y;
 		var pos = dir switch
 		{
-			MoveDirection.Up => new Vector2((float)(rng.NextDouble() * screenWidth), screenHeight),
-			MoveDirection.Down => new Vector2((float)(rng.NextDouble() * screenWidth), 0),
-			MoveDirection.Left => new Vector2(screenWidth, (float)(rng.NextDouble() * screenHeight)),
-			MoveDirection.Right => new Vector2(0, (float)(rng.NextDouble() * screenHeight)),
+			MoveDirection.Up => new Vector2((float)(rng.NextDouble() * screenWidth), screenHeight + SCREEN_OFFSET),
+			MoveDirection.Down => new Vector2((float)(rng.NextDouble() * screenWidth), 0 - SCREEN_OFFSET),
+			MoveDirection.Left => new Vector2(screenWidth + SCREEN_OFFSET, (float)(rng.NextDouble() * screenHeight)),
+			MoveDirection.Right => new Vector2(0 - SCREEN_OFFSET, (float)(rng.NextDouble() * screenHeight)),
 			_ => Vector2.Zero
 		};
 
