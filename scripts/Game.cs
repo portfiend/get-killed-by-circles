@@ -13,14 +13,20 @@ public partial class Game : Node2D
 	[Export] public Node GameObjects;
 
 	private float PlayerScore => Player.Size - Player.BASE_SIZE;
-	private float WIN_THRESHOLD = 3000.0f;
+	private float WIN_THRESHOLD = 5000.0f;
 	private bool _gameOver = false;
 
 	public override void _Ready()
 	{
 		base._Ready();
 
-		Player.ScoreUpdated += _ => { Hud.UpdateScore(PlayerScore); };
+		Player.ScoreUpdated += _ =>
+		{
+			Hud.UpdateScore(PlayerScore);
+			if (PlayerScore > WIN_THRESHOLD)
+				GameOverHud.GameOver(PlayerScore, wonGame: true);	
+		};
+
 		Player.Died += OnPlayerDied;
 
 		Hud.UpdateScore(PlayerScore);
@@ -29,7 +35,7 @@ public partial class Game : Node2D
 	private void OnPlayerDied()
 	{
 		GameObjects.QueueFree();
-		GameOverHud.GameOver(PlayerScore, PlayerScore > WIN_THRESHOLD);
+		GameOverHud.GameOver(PlayerScore, wonGame: false);
 		_gameOver = true;
 	}
 
