@@ -46,10 +46,11 @@ public sealed partial class PlayerCell : Cell
 
 	private void AttemptEat(EnemyCell otherCell)
 	{
-		if (Size < otherCell.Size)
-			Die();
+		GD.Print($"Player of size {Size} is attempting to eat a cell of {otherCell.Size}");
 		if (Size > otherCell.Size)
 			Eat(otherCell);
+		else if (Size < otherCell.Size)
+			Die();
 	}
 
 	private void Die()

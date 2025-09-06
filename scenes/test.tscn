@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdibqjsijmdyr"]
+
+[ext_resource type="PackedScene" uid="uid://n870tot27k74" path="res://scenes/player_cell.tscn" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://bgcylyj083n8w" path="res://scenes/enemy_cell.tscn" id="2_iyx0m"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_bl13t")]
+position = Vector2(184, 232)
+BASE_SIZE = 5000.0
+
+[node name="Enemy" parent="." instance=ExtResource("2_iyx0m")]
+position = Vector2(472, 232)
+RandomSize = false
+Size = 5000.0
